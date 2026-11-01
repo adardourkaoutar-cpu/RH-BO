@@ -35,42 +35,42 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
   const getRoleBadge = () => {
     switch (currentUser.role) {
       case 'head_nurse':
-        return { label: 'Infirmier Chef (Bloc)', bg: 'bg-indigo-100 text-indigo-800 border-indigo-200' };
+        return { label: 'Infirmier Chef (Bloc)', bg: 'bg-teal-100 text-teal-900 border-teal-300' };
       case 'hr_officer':
-        return { label: 'Bureau RH (Visa CHP)', bg: 'bg-emerald-100 text-emerald-800 border-emerald-200' };
+        return { label: 'Bureau RH (Visa CHP)', bg: 'bg-emerald-100 text-emerald-900 border-emerald-300' };
       default:
-        return { label: 'Personnel Infirmier', bg: 'bg-blue-100 text-blue-800 border-blue-200' };
+        return { label: 'Personnel Infirmier', bg: 'bg-cyan-100 text-cyan-900 border-cyan-300' };
     }
   };
 
   const badge = getRoleBadge();
 
   return (
-    <header className="bg-white border-b border-slate-200 shadow-xs sticky top-0 z-30">
+    <header className="bg-white border-b border-teal-100/80 shadow-xs sticky top-0 z-30">
       {/* Official Moroccan Administrative Top Bar */}
-      <div className="bg-slate-900 text-slate-100 px-4 py-1.5 text-xs flex flex-wrap items-center justify-between border-b border-slate-800 gap-2">
+      <div className="bg-[#0b3334] text-teal-100 px-4 py-1.5 text-xs flex flex-wrap items-center justify-between border-b border-teal-900/60 gap-2">
         <div className="flex items-center space-x-2 font-medium tracking-wide">
-          <span className="text-amber-400 font-semibold">المملكة المغربية</span>
-          <span className="text-slate-400">|</span>
+          <span className="text-amber-300 font-semibold">المملكة المغربية</span>
+          <span className="text-teal-700">|</span>
           <span>Royaume du Maroc — Ministère de la Santé et de la Protection Sociale</span>
-          <span className="text-slate-500 hidden md:inline">|</span>
-          <span className="text-slate-300 hidden md:inline">Délégation Sidi Ifni — CHP Sidi Ifni</span>
+          <span className="text-teal-700 hidden md:inline">|</span>
+          <span className="text-teal-200 hidden md:inline">Délégation Sidi Ifni — CHP Sidi Ifni</span>
         </div>
 
         <div className="flex items-center space-x-4 text-xs">
           <div className="flex items-center space-x-1.5" title="Synchronisation inter-terminaux active">
-            <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-            <span className="text-slate-300">Terminal Synchronisé</span>
+            <Radio className="w-3.5 h-3.5 text-emerald-300 animate-pulse" />
+            <span className="text-teal-200">Terminal Synchronisé</span>
           </div>
 
           <div className="flex items-center space-x-1.5">
             {isOnline ? (
-              <span className="flex items-center text-emerald-400 space-x-1">
+              <span className="flex items-center text-emerald-300 space-x-1">
                 <Wifi className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">En Ligne</span>
               </span>
             ) : (
-              <span className="flex items-center text-amber-400 space-x-1">
+              <span className="flex items-center text-amber-300 space-x-1">
                 <WifiOff className="w-3.5 h-3.5" />
                 <span>Hors-Ligne (Local)</span>
               </span>
@@ -84,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
         <div className="flex items-center justify-between gap-4">
           {/* Logo & Service Title */}
           <div className="flex items-center space-x-3">
-            <div className="w-11 h-11 rounded-xl bg-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/20">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-700 to-cyan-800 text-white flex items-center justify-center shadow-md shadow-teal-800/20">
               <Building2 className="w-6 h-6" />
             </div>
             <div>
@@ -92,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
                 <h1 className="text-lg font-bold text-slate-900 leading-tight">
                   Bloc Opératoire Central
                 </h1>
-                <span className="bg-blue-50 text-blue-700 text-[11px] font-semibold px-2 py-0.5 rounded-full border border-blue-200">
+                <span className="bg-teal-50 text-teal-800 text-[11px] font-semibold px-2 py-0.5 rounded-full border border-teal-200">
                   CHP Sidi Ifni
                 </span>
               </div>
@@ -108,9 +108,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
             <button
               onClick={exportDatabaseJSON}
               title="Exporter la base de données en JSON"
-              className="hidden lg:flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-300"
+              className="hidden lg:flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 bg-teal-50/70 hover:bg-teal-100/70 text-teal-800 rounded-lg transition-colors border border-teal-200"
             >
-              <Download className="w-3.5 h-3.5 text-slate-600" />
+              <Download className="w-3.5 h-3.5 text-teal-700" />
               <span>Sauvegarder JSON</span>
             </button>
 
@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
             <button
               onClick={manualSyncTrigger}
               title={`Dernière synchronisation: ${lastSyncTime.toLocaleTimeString()}`}
-              className="p-2 text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-lg transition-colors"
+              className="p-2 text-teal-700 hover:text-teal-900 hover:bg-teal-50 rounded-lg transition-colors"
             >
               <RefreshCw className="w-4 h-4" />
             </button>
@@ -126,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
             {/* Fast Add Nurse */}
             <button
               onClick={onOpenAddNurseModal}
-              className="flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-xs shadow-blue-600/30 transition-colors"
+              className="flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 bg-teal-700 hover:bg-teal-800 text-white rounded-lg shadow-sm shadow-teal-800/30 transition-colors"
             >
               <span className="text-base leading-none font-normal">+</span>
               <span className="hidden sm:inline">Ajouter Personnel</span>
@@ -136,9 +136,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
             <div className="relative">
               <button
                 onClick={() => setRoleMenuOpen(!roleMenuOpen)}
-                className="flex items-center space-x-2 p-1.5 pl-2.5 pr-3 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors text-left"
+                className="flex items-center space-x-2 p-1.5 pl-2.5 pr-3 rounded-lg border border-teal-200 hover:border-teal-300 hover:bg-teal-50/50 transition-colors text-left"
               >
-                <div className="w-7 h-7 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs border border-blue-300">
+                <div className="w-7 h-7 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xs border border-teal-300">
                   {currentUser.name.charAt(0)}
                 </div>
                 <div className="hidden sm:block text-left">
@@ -178,18 +178,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
                       });
                       setRoleMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-slate-50 ${
-                      currentUser.role === 'head_nurse' ? 'bg-indigo-50/70 text-indigo-900 font-semibold' : 'text-slate-700'
+                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-teal-50/50 ${
+                      currentUser.role === 'head_nurse' ? 'bg-teal-50 text-teal-900 font-semibold' : 'text-slate-700'
                     }`}
                   >
                     <div className="flex items-center space-x-2">
-                      <Stethoscope className="w-4 h-4 text-indigo-600" />
+                      <Stethoscope className="w-4 h-4 text-teal-700" />
                       <div>
                         <div>Kaoutar ADARDOUR</div>
                         <div className="text-[10px] text-slate-500">Infirmier Chef du Bloc</div>
                       </div>
                     </div>
-                    {currentUser.role === 'head_nurse' && <span className="text-indigo-600">✓</span>}
+                    {currentUser.role === 'head_nurse' && <span className="text-teal-700">✓</span>}
                   </button>
 
                   <button
@@ -201,18 +201,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
                       });
                       setRoleMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-slate-50 ${
-                      currentUser.role === 'hr_officer' ? 'bg-emerald-50/70 text-emerald-900 font-semibold' : 'text-slate-700'
+                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-emerald-50/50 ${
+                      currentUser.role === 'hr_officer' ? 'bg-emerald-50 text-emerald-900 font-semibold' : 'text-slate-700'
                     }`}
                   >
                     <div className="flex items-center space-x-2">
-                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                      <ShieldCheck className="w-4 h-4 text-emerald-700" />
                       <div>
                         <div>Bureau des Ressources Humaines</div>
                         <div className="text-[10px] text-slate-500">Visa & Décisions Officielles</div>
                       </div>
                     </div>
-                    {currentUser.role === 'hr_officer' && <span className="text-emerald-600">✓</span>}
+                    {currentUser.role === 'hr_officer' && <span className="text-emerald-700">✓</span>}
                   </button>
 
                   <button
@@ -226,18 +226,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
                       });
                       setRoleMenuOpen(false);
                     }}
-                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-slate-50 ${
-                      currentUser.role === 'nursing_staff' ? 'bg-blue-50/70 text-blue-900 font-semibold' : 'text-slate-700'
+                    className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-cyan-50/50 ${
+                      currentUser.role === 'nursing_staff' ? 'bg-cyan-50 text-cyan-900 font-semibold' : 'text-slate-700'
                     }`}
                   >
                     <div className="flex items-center space-x-2">
-                      <UserCheck className="w-4 h-4 text-blue-600" />
+                      <UserCheck className="w-4 h-4 text-cyan-700" />
                       <div>
                         <div>Personnel Infirmier (Agent)</div>
                         <div className="text-[10px] text-slate-500">Consultation fiche & demandes</div>
                       </div>
                     </div>
-                    {currentUser.role === 'nursing_staff' && <span className="text-blue-600">✓</span>}
+                    {currentUser.role === 'nursing_staff' && <span className="text-cyan-700">✓</span>}
                   </button>
 
                   <div className="border-t border-slate-100 mt-1 pt-1">
@@ -246,9 +246,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSyncModal, onOpenAddNurseM
                         setRoleMenuOpen(false);
                         onOpenSyncModal();
                       }}
-                      className="w-full text-left px-3 py-2 text-xs text-blue-700 hover:bg-blue-50 font-medium flex items-center space-x-2"
+                      className="w-full text-left px-3 py-2 text-xs text-teal-800 hover:bg-teal-50 font-medium flex items-center space-x-2"
                     >
-                      <Radio className="w-3.5 h-3.5 text-blue-600" />
+                      <Radio className="w-3.5 h-3.5 text-teal-700" />
                       <span>Gérer la synchronisation / Authentification</span>
                     </button>
                   </div>

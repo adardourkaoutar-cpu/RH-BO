@@ -66,7 +66,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onSelectTab }
   ];
 
   return (
-    <nav className="bg-white border-b border-slate-200">
+    <nav className="bg-white border-b border-teal-100/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex space-x-1 sm:space-x-4 overflow-x-auto no-scrollbar py-2">
           {tabs.map((tab) => {
@@ -75,10 +75,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onSelectTab }
               <button
                 key={tab.id}
                 onClick={() => onSelectTab(tab.id)}
-                className={`flex items-center space-x-2 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
+                className={`flex items-center space-x-2 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? 'bg-blue-700 text-white shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    ? 'bg-gradient-to-r from-teal-700 to-cyan-800 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-teal-900 hover:bg-teal-50/70'
                 }`}
               >
                 {tab.icon}
@@ -86,7 +86,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onSelectTab }
                 {tab.badge !== undefined && (
                   <span
                     className={`ml-1 px-1.5 py-0.2 rounded-full text-[11px] font-bold ${
-                      isActive ? 'bg-amber-400 text-slate-900' : 'bg-red-500 text-white'
+                      isActive ? 'bg-amber-300 text-slate-900' : 'bg-red-500 text-white'
                     }`}
                   >
                     {tab.badge}

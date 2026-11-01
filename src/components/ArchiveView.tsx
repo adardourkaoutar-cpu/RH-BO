@@ -69,7 +69,7 @@ export const ArchiveView: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">
               Rubrique Archives & Tableaux de Service
             </h2>
-            <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+            <span className="bg-teal-100 text-teal-800 border border-teal-200 text-xs font-bold px-2.5 py-0.5 rounded-full">
               Conservation & Traçabilité
             </span>
           </div>
@@ -83,7 +83,7 @@ export const ArchiveView: React.FC = () => {
           <button
             onClick={() => setActiveTab('schedules')}
             className={`px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
-              activeTab === 'schedules' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              activeTab === 'schedules' ? 'bg-white text-teal-800 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Tableaux de Garde & Horaires ({plannings.length})
@@ -91,7 +91,7 @@ export const ArchiveView: React.FC = () => {
           <button
             onClick={() => setActiveTab('documents')}
             className={`px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
-              activeTab === 'documents' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              activeTab === 'documents' ? 'bg-white text-teal-800 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Archives Décisions PDF ({archivedDecisions.length})
@@ -108,7 +108,7 @@ export const ArchiveView: React.FC = () => {
             </h3>
             <button
               onClick={() => setIsNewPlanModalOpen(true)}
-              className="flex items-center space-x-1.5 px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
+              className="flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer shadow-xs"
             >
               <Plus className="w-4 h-4" />
               <span>Nouveau Tableau de Service</span>
@@ -123,7 +123,7 @@ export const ArchiveView: React.FC = () => {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-800 px-2 py-0.5 rounded border border-blue-200">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-900 px-2 py-0.5 rounded border border-teal-200">
                       Mois : {plan.mois} • {plan.typePlanning}
                     </span>
                     <h4 className="text-base font-bold text-slate-900 mt-1">
@@ -243,7 +243,7 @@ export const ArchiveView: React.FC = () => {
                       <td className="px-4 py-3 text-right">
                         <button
                           onClick={() => alert(`Téléchargement de l'archive officielle: ${fileName}`)}
-                          className="inline-flex items-center space-x-1 text-xs text-blue-700 hover:text-blue-900 font-semibold px-2.5 py-1 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
+                          className="inline-flex items-center space-x-1 text-xs text-teal-700 hover:text-teal-900 font-semibold px-2.5 py-1 rounded-lg hover:bg-teal-50 transition-colors cursor-pointer"
                         >
                           <Download className="w-3.5 h-3.5" />
                           <span>Télécharger PDF</span>
@@ -313,7 +313,7 @@ export const ArchiveView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-bold bg-amber-600 hover:bg-amber-700 text-white rounded-xl shadow-md"
+                  className="px-4 py-2 text-xs font-bold bg-amber-600 hover:bg-amber-700 text-white rounded-xl shadow-md cursor-pointer"
                 >
                   Enregistrer la Rectification
                 </button>
@@ -327,8 +327,8 @@ export const ArchiveView: React.FC = () => {
       {isNewPlanModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
           <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4">
-            <div className="flex items-center space-x-2 text-blue-900 font-bold text-base border-b border-slate-100 pb-2">
-              <Plus className="w-5 h-5 text-blue-700" />
+            <div className="flex items-center space-x-2 text-teal-950 font-bold text-base border-b border-slate-100 pb-2">
+              <Plus className="w-5 h-5 text-teal-700" />
               <span>Créer un Tableau de Service / Planning</span>
             </div>
 
@@ -343,7 +343,7 @@ export const ArchiveView: React.FC = () => {
                   placeholder="Ex: Tableau de Garde - Décembre 2026"
                   value={newTitre}
                   onChange={(e) => setNewTitre(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -356,7 +356,7 @@ export const ArchiveView: React.FC = () => {
                     type="month"
                     value={newMois}
                     onChange={(e) => setNewMois(e.target.value)}
-                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white"
+                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                   />
                 </div>
 
@@ -367,7 +367,7 @@ export const ArchiveView: React.FC = () => {
                   <select
                     value={newType}
                     onChange={(e) => setNewType(e.target.value as any)}
-                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white"
+                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                   >
                     <option value="Garde">Système de Garde (24h)</option>
                     <option value="Normal">Système Normal (08h-16h30)</option>
@@ -386,7 +386,7 @@ export const ArchiveView: React.FC = () => {
                   value={newDescription}
                   onChange={(e) => setNewDescription(e.target.value)}
                   placeholder="Ex: Équipes d'anesthésie et panseurs d'astreinte..."
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -400,7 +400,7 @@ export const ArchiveView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white rounded-xl shadow-md"
+                  className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl shadow-md cursor-pointer"
                 >
                   Enregistrer
                 </button>

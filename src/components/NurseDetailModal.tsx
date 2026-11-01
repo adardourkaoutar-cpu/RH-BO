@@ -56,7 +56,7 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150">
       <div className="bg-white rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden my-6">
         {/* Header with Moroccan Hospital Styling */}
-        <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 p-5 text-white flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#0b3334] via-[#0f4c4c] to-[#0d4554] p-5 text-white flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center font-bold text-lg text-white">
               {nurse.prenom.charAt(0)}{nurse.nom.charAt(0)}
@@ -66,11 +66,11 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
                 <h2 className="text-lg font-bold">
                   {nurse.nom} {nurse.prenom}
                 </h2>
-                <span className="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-white/20 text-blue-100 border border-white/30">
+                <span className="text-[11px] px-2 py-0.5 rounded-full font-semibold bg-teal-500/30 text-teal-100 border border-teal-400/40">
                   {nurse.specialite} — {nurse.fonction}
                 </span>
               </div>
-              <p className="text-xs text-blue-200 mt-0.5">
+              <p className="text-xs text-teal-200/90 mt-0.5">
                 PPR: {nurse.ppr} | CNI: {nurse.cni} | Bloc Opératoire Central CHP Sidi Ifni
               </p>
             </div>
@@ -121,10 +121,10 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
               <span className="text-[10px] text-slate-400 block mt-0.5">Recruté(e) le {nurse.dateRecrutement}</span>
             </div>
 
-            <div className="bg-blue-50/70 p-3 rounded-xl border border-blue-200 text-xs">
-              <span className="text-blue-700 font-medium block">Solde Congé Admin</span>
-              <span className="text-base font-bold text-blue-900">{remainingAdmin} jours</span>
-              <span className="text-[10px] text-blue-600 block mt-0.5">Statutaire: 22j + {nurse.congeAdmin?.joursReportes || 0}j</span>
+            <div className="bg-teal-50/80 p-3 rounded-xl border border-teal-200 text-xs">
+              <span className="text-teal-700 font-medium block">Solde Congé Admin</span>
+              <span className="text-base font-bold text-teal-950">{remainingAdmin} jours</span>
+              <span className="text-[10px] text-teal-700/80 block mt-0.5">Statutaire: 22j + {nurse.congeAdmin?.joursReportes || 0}j</span>
             </div>
 
             <div className="bg-emerald-50/70 p-3 rounded-xl border border-emerald-200 text-xs">
@@ -160,8 +160,8 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left: General Info */}
             <div className="border border-slate-200 rounded-xl p-4 space-y-2 text-xs">
-              <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5 text-blue-900">
-                <User className="w-4 h-4" />
+              <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5 text-teal-950">
+                <User className="w-4 h-4 text-teal-700" />
                 <span>Renseignements Généraux</span>
               </h4>
               <div className="flex justify-between py-1 border-b border-slate-100">
@@ -188,8 +188,8 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
 
             {/* Right: Career & System */}
             <div className="border border-slate-200 rounded-xl p-4 space-y-2 text-xs">
-              <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5 text-blue-900">
-                <Building className="w-4 h-4" />
+              <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5 text-teal-950">
+                <Building className="w-4 h-4 text-teal-700" />
                 <span>Situation Administrative & Système</span>
               </h4>
               <div className="flex justify-between py-1 border-b border-slate-100">
@@ -202,7 +202,7 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
               </div>
               <div className="flex justify-between py-1 border-b border-slate-100">
                 <span className="text-slate-500">Système de Travail:</span>
-                <span className="font-bold text-blue-700">{nurse.situationActuelle}</span>
+                <span className="font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">{nurse.situationActuelle}</span>
               </div>
               {nurse.shiftNormalDetails && (
                 <div className="flex justify-between py-1 border-b border-slate-100">
@@ -219,8 +219,8 @@ export const NurseDetailModal: React.FC<NurseDetailModalProps> = ({
 
           {/* Leave Quota Table */}
           <div className="border border-slate-200 rounded-xl p-4">
-            <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-3 flex items-center space-x-1.5 text-blue-900">
-              <Calendar className="w-4 h-4" />
+            <h4 className="font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-3 flex items-center space-x-1.5 text-teal-950">
+              <Calendar className="w-4 h-4 text-teal-700" />
               <span>Droits & Soldes de Congés Réglementaires (Maroc)</span>
             </h4>
 

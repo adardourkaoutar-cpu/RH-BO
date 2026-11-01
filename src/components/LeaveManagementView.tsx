@@ -189,7 +189,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
               <h2 className="text-xl font-bold text-slate-900">
                 Rubrique Gestion des Congés & Arrêts
               </h2>
-              <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+              <span className="bg-teal-100 text-teal-800 border border-teal-200 text-xs font-bold px-2.5 py-0.5 rounded-full">
                 Fonction Publique Marocaine
               </span>
             </div>
@@ -215,7 +215,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                 setSelectedType('Congé Administratif');
                 setIsNewModalOpen(true);
               }}
-              className="flex items-center space-x-1.5 px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-md transition-colors cursor-pointer"
+              className="flex items-center space-x-1.5 px-4 py-2 bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl text-xs font-bold shadow-md transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Nouvelle Demande</span>
@@ -225,10 +225,10 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
 
         {/* 4 Quotas Quick Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4 pt-4 border-t border-slate-100 text-xs">
-          <div className="bg-blue-50/70 p-3 rounded-xl border border-blue-200/80">
-            <span className="font-bold text-blue-900 block">Congé Administratif (Annuel)</span>
-            <span className="text-blue-700 font-semibold text-sm">22 jours ouvrables / an</span>
-            <span className="text-[10px] text-blue-600 block mt-0.5">
+          <div className="bg-teal-50/80 p-3 rounded-xl border border-teal-200/80">
+            <span className="font-bold text-teal-950 block">Congé Administratif (Annuel)</span>
+            <span className="text-teal-700 font-bold text-sm">22 jours ouvrables / an</span>
+            <span className="text-[10px] text-teal-800/80 block mt-0.5">
               Exclut samedis, dimanches et fériés marocains. Report autorisé.
             </span>
           </div>
@@ -294,7 +294,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
               placeholder="Rechercher agent, PPR..."
               value={searchNurse}
               onChange={(e) => setSearchNurse(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+              className="w-full pl-9 pr-3 py-1.5 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
             />
           </div>
 
@@ -379,7 +379,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                               ? 'bg-purple-100 text-purple-800 border border-purple-200'
                               : dem.typeConge === 'Congé Exceptionnel'
                               ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
-                              : 'bg-blue-100 text-blue-800 border border-blue-200'
+                              : 'bg-teal-100 text-teal-800 border border-teal-200'
                           }`}
                         >
                           {dem.typeConge}
@@ -407,7 +407,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                           </span>
                         )}
                         {isActiveNow && (
-                          <span className="inline-block mt-1 px-1.5 py-0.2 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded">
+                          <span className="inline-block mt-1 px-1.5 py-0.2 bg-teal-100 text-teal-800 text-[10px] font-bold rounded">
                             Actuellement en congé
                           </span>
                         )}
@@ -415,7 +415,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
 
                       {/* Statutory Days */}
                       <td className="px-4 py-3">
-                        <span className="font-extrabold text-blue-900 text-sm">
+                        <span className="font-extrabold text-teal-950 text-sm">
                           {dem.nombreJours} jours
                         </span>
                         <div className="text-[10px] text-slate-400">
@@ -431,7 +431,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                             <span
                               className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                                 dem.etatDemande === 'Confirmé'
-                                  ? 'bg-emerald-100 text-emerald-800'
+                                   ? 'bg-emerald-100 text-emerald-800'
                                   : dem.etatDemande === 'Refusé'
                                   ? 'bg-red-100 text-red-800'
                                   : dem.etatDemande === 'En attente'
@@ -463,7 +463,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                             </div>
                             <div>
                               Visa RH: {dem.visaRH ? (
-                                <b className="text-blue-700">Visé ({dem.visaRH.reference || 'OK'})</b>
+                                <b className="text-teal-700">Visé ({dem.visaRH.reference || 'OK'})</b>
                               ) : isSick ? (
                                 <span className="text-slate-400 italic">Enregistré d'office</span>
                               ) : (
@@ -481,7 +481,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                           <div className="flex items-center space-x-1.5">
                             <button
                               onClick={() => nurse && onOpenOfficialSlip('cessation', dem, nurse)}
-                              className="text-[11px] font-semibold text-blue-700 hover:text-blue-900 flex items-center space-x-1 underline cursor-pointer"
+                              className="text-[11px] font-semibold text-teal-700 hover:text-teal-900 flex items-center space-x-1 underline cursor-pointer"
                               title="Générer / Imprimer l'Avis de Cessation"
                             >
                               <Printer className="w-3.5 h-3.5" />
@@ -505,7 +505,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                           <div className="flex items-center space-x-1.5">
                             <button
                               onClick={() => nurse && onOpenOfficialSlip('reprise', dem, nurse)}
-                              className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center space-x-1 underline cursor-pointer"
+                              className="text-[11px] font-semibold text-cyan-700 hover:text-cyan-900 flex items-center space-x-1 underline cursor-pointer"
                               title="Générer / Imprimer l'Avis de Reprise"
                             >
                               <Printer className="w-3.5 h-3.5" />
@@ -528,8 +528,8 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                           {/* PDF Decision */}
                           <div className="text-[10px]">
                             {dem.decisionPdfName ? (
-                              <span className="text-indigo-700 font-medium flex items-center space-x-1">
-                                <FileCheck className="w-3 h-3 text-indigo-600" />
+                              <span className="text-teal-800 font-medium flex items-center space-x-1">
+                                <FileCheck className="w-3 h-3 text-teal-600" />
                                 <span className="truncate max-w-[110px]" title={dem.decisionPdfName}>
                                   {dem.decisionPdfName}
                                 </span>
@@ -537,7 +537,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                             ) : (
                               <button
                                 onClick={() => setUploadPdfModalDemande(dem)}
-                                className="text-slate-500 hover:text-blue-700 flex items-center space-x-1 underline cursor-pointer"
+                                className="text-slate-500 hover:text-teal-700 flex items-center space-x-1 underline cursor-pointer"
                               >
                                 <FileUp className="w-3 h-3" />
                                 <span>Joindre Décision (PDF)</span>
@@ -555,7 +555,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                             <div className="flex items-center space-x-1">
                               <button
                                 onClick={() => giveHeadNurseOpinion(dem.id, 'Favorable')}
-                                className="px-2 py-1 text-[11px] font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded transition-colors cursor-pointer"
+                                className="px-2 py-1 text-[11px] font-bold bg-teal-600 hover:bg-teal-700 text-white rounded transition-colors cursor-pointer"
                               >
                                 Avis Favorable
                               </button>
@@ -573,7 +573,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                             <div className="flex items-center space-x-1">
                               <button
                                 onClick={() => giveVisaRH(dem.id, 'Visé')}
-                                className="px-2.5 py-1 text-[11px] font-bold bg-blue-700 hover:bg-blue-800 text-white rounded transition-colors cursor-pointer"
+                                className="px-2.5 py-1 text-[11px] font-bold bg-teal-700 hover:bg-teal-800 text-white rounded transition-colors cursor-pointer"
                               >
                                 Apposer Visa RH
                               </button>
@@ -614,9 +614,9 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
       {isNewModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150">
           <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden my-6">
-            <div className="bg-gradient-to-r from-blue-900 to-indigo-900 p-4 text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#0b3334] to-[#0d4554] p-4 text-white flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <FileText className="w-5 h-5 text-blue-300" />
+                <FileText className="w-5 h-5 text-teal-300" />
                 <span className="font-bold text-base">
                   {selectedType === 'Congé Maladie' ? 'Enregistrement Immédiat d’Arrêt Maladie' : 'Nouvelle Demande de Congé Réglementaire'}
                 </span>
@@ -661,7 +661,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                 <select
                   value={selectedNurseId}
                   onChange={(e) => setSelectedNurseId(e.target.value)}
-                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   {activeNurses.map((n) => (
                     <option key={n.id} value={n.id}>
@@ -673,7 +673,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                 {currentSelectedNurse && (
                   <div className="mt-1.5 flex items-center space-x-3 text-[11px] text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-200">
                     <span>
-                      Solde Congé Admin : <b className="text-blue-700">{calculateRemainingAdminDays(currentSelectedNurse)} jours</b>
+                      Solde Congé Admin : <b className="text-teal-700">{calculateRemainingAdminDays(currentSelectedNurse)} jours</b>
                     </span>
                     <span>•</span>
                     <span>
@@ -698,7 +698,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                   <select
                     value={selectedType}
                     onChange={(e) => handleTypeChange(e.target.value as TypeConge)}
-                    className="w-full text-xs font-bold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                    className="w-full text-xs font-bold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                   >
                     <option value="Congé Administratif">Congé Administratif (Annuel 22j)</option>
                     <option value="Congé Maladie">Congé Maladie (Jusqu'à 3 mois)</option>
@@ -775,7 +775,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                   <span className="text-slate-600">
                     Durée statutaire calculée automatiquement :
                   </span>
-                  <span className="font-extrabold text-blue-900 text-sm bg-blue-100 px-3 py-1 rounded-lg">
+                  <span className="font-extrabold text-teal-950 text-sm bg-teal-100 border border-teal-200 px-3 py-1 rounded-lg">
                     {calculatedDays} jours {selectedType === 'Congé Administratif' ? 'ouvrables' : 'calendaires'}
                   </span>
                 </div>
@@ -806,7 +806,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white rounded-xl shadow-md"
+                  className="px-5 py-2 text-xs font-bold bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl shadow-md cursor-pointer"
                 >
                   {selectedType === 'Congé Maladie' ? 'Enregistrer Immédiatement' : 'Soumettre la Demande'}
                 </button>
@@ -863,8 +863,8 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
       {uploadPdfModalDemande && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
           <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 p-6 space-y-4">
-            <div className="flex items-center space-x-2 text-blue-900 font-bold text-base border-b border-slate-100 pb-2">
-              <FileUp className="w-5 h-5 text-blue-700" />
+            <div className="flex items-center space-x-2 text-teal-950 font-bold text-base border-b border-slate-100 pb-2">
+              <FileUp className="w-5 h-5 text-teal-700" />
               <span>Joindre la Décision Administrative (PDF)</span>
             </div>
 
@@ -894,7 +894,7 @@ export const LeaveManagementView: React.FC<LeaveManagementViewProps> = ({
               </button>
               <button
                 onClick={handleConfirmUploadPdf}
-                className="px-4 py-2 text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white rounded-xl shadow-md"
+                className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl shadow-md cursor-pointer"
               >
                 Valider & Attacher
               </button>

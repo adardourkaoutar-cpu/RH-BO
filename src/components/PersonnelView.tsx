@@ -99,13 +99,13 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
   const getRoleBadgeColor = (role: RoleFonction) => {
     switch (role) {
       case 'Infirmier chef':
-        return 'bg-amber-100 text-amber-900 border-amber-300';
+        return 'bg-teal-100 text-teal-900 border-teal-300';
       case 'Anesthésiste':
-        return 'bg-blue-100 text-blue-900 border-blue-300';
+        return 'bg-cyan-100 text-cyan-900 border-cyan-300';
       case 'Aide-opératoire':
         return 'bg-emerald-100 text-emerald-900 border-emerald-300';
       case 'Stérilisation':
-        return 'bg-purple-100 text-purple-900 border-purple-300';
+        return 'bg-teal-50 text-teal-800 border-teal-200';
       default:
         return 'bg-slate-100 text-slate-800 border-slate-300';
     }
@@ -114,13 +114,13 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Top Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-teal-100 shadow-xs">
         <div>
           <div className="flex items-center space-x-2">
             <h2 className="text-xl font-bold text-slate-900">
               Fiche du Personnel Infirmier du Bloc
             </h2>
-            <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+            <span className="bg-teal-100 text-teal-900 text-xs font-bold px-2.5 py-0.5 rounded-full border border-teal-200">
               {activeNurses.length} actifs
             </span>
           </div>
@@ -135,7 +135,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
             <button
               onClick={() => setActiveTab('active')}
               className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
-                activeTab === 'active' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+                activeTab === 'active' ? 'bg-white text-teal-800 shadow-xs' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Personnel Actif ({activeNurses.length})
@@ -152,7 +152,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
 
           <button
             onClick={onOpenAddModal}
-            className="flex items-center space-x-1.5 px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-xl text-xs font-bold shadow-md transition-all cursor-pointer"
+            className="flex items-center space-x-1.5 px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white rounded-xl text-xs font-bold shadow-md shadow-teal-700/20 transition-all cursor-pointer"
           >
             <UserPlus className="w-4 h-4" />
             <span>Ajouter Personnel</span>
@@ -161,7 +161,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-3">
+      <div className="bg-white p-4 rounded-xl border border-teal-100 shadow-xs space-y-3">
         <div className="flex flex-col md:flex-row md:items-center gap-3">
           {/* Search Input */}
           <div className="relative flex-1">
@@ -171,7 +171,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
               placeholder="Rechercher par Nom, Prénom, PPR, CNI, Ville..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full text-xs pl-9 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+              className="w-full text-xs pl-9 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
             />
           </div>
 
@@ -182,7 +182,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
                 type="checkbox"
                 checked={groupByRole}
                 onChange={(e) => setGroupByRole(e.target.checked)}
-                className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
+                className="w-4 h-4 text-teal-700 rounded border-slate-300 focus:ring-teal-600"
               />
               <span>Grouper par Rôle / Fonction</span>
             </label>
@@ -190,10 +190,10 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
             {/* Sort Age Toggle */}
             <button
               onClick={() => setSortByAgeOrder(sortByAgeOrder === 'asc' ? 'desc' : 'asc')}
-              className="flex items-center space-x-1 px-3 py-2 border border-slate-300 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium transition-colors cursor-pointer"
+              className="flex items-center space-x-1 px-3 py-2 border border-teal-200 rounded-lg bg-teal-50/50 hover:bg-teal-50 text-teal-900 font-medium transition-colors cursor-pointer"
               title="Trier par âge"
             >
-              <ArrowUpDown className="w-3.5 h-3.5 text-blue-600" />
+              <ArrowUpDown className="w-3.5 h-3.5 text-teal-700" />
               <span>Âge : {sortByAgeOrder === 'asc' ? 'Croissant' : 'Décroissant'}</span>
             </button>
           </div>
@@ -318,7 +318,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
                             {/* Name & Avatar */}
                             <td className="px-4 py-3">
                               <div className="flex items-center space-x-2.5">
-                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-xs">
+                                <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-bold flex items-center justify-center text-xs border border-teal-200">
                                   {nurse.prenom.charAt(0)}{nurse.nom.charAt(0)}
                                 </div>
                                 <div>
@@ -340,7 +340,7 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
 
                             {/* Specialite */}
                             <td className="px-4 py-3">
-                              <span className="bg-slate-100 text-slate-800 px-2 py-0.5 rounded font-medium text-[11px]">
+                              <span className="bg-teal-50 text-teal-900 border border-teal-200 px-2 py-0.5 rounded font-medium text-[11px]">
                                 {nurse.specialite}
                               </span>
                             </td>
@@ -367,18 +367,18 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
                               <span
                                 className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                                   nurse.situationActuelle.includes('garde')
-                                    ? 'bg-blue-100 text-blue-800'
+                                    ? 'bg-teal-100 text-teal-900'
                                     : nurse.situationActuelle.includes('normal')
-                                    ? 'bg-emerald-100 text-emerald-800'
+                                    ? 'bg-cyan-100 text-cyan-900'
                                     : nurse.situationActuelle.includes('astreinte')
-                                    ? 'bg-amber-100 text-amber-800'
+                                    ? 'bg-emerald-100 text-emerald-900'
                                     : 'bg-red-100 text-red-800'
                                 }`}
                               >
                                 {nurse.situationActuelle}
                               </span>
                               <div className="text-[10px] text-slate-500 mt-0.5">
-                                Solde congé: <b className="text-blue-700">{remaining}j</b>
+                                Solde congé: <b className="text-teal-800">{remaining}j</b>
                               </div>
                             </td>
 
@@ -386,14 +386,14 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
                             <td className="px-4 py-3">
                               <div className="flex flex-col gap-1">
                                 {nurse.enceinte && (
-                                  <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200">
-                                    <Baby className="w-3 h-3" />
+                                  <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-teal-900 bg-teal-50 px-1.5 py-0.5 rounded border border-teal-300">
+                                    <Baby className="w-3 h-3 text-teal-700" />
                                     <span>Enceinte (Maternité)</span>
                                   </span>
                                 )}
                                 {nurse.navette ? (
-                                  <span className="inline-flex items-center space-x-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                                    <Car className="w-3 h-3" />
+                                  <span className="inline-flex items-center space-x-1 text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                                    <Car className="w-3 h-3 text-emerald-700" />
                                     <span>De {nurse.trajetNavette || nurse.lieuResidence}</span>
                                   </span>
                                 ) : (
@@ -409,14 +409,14 @@ export const PersonnelView: React.FC<PersonnelViewProps> = ({
                               <div className="flex items-center justify-end space-x-1">
                                 <button
                                   onClick={() => onSelectNurse(nurse.id)}
-                                  className="p-1.5 text-slate-500 hover:text-blue-700 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
+                                  className="p-1.5 text-slate-500 hover:text-teal-800 hover:bg-teal-50 rounded-md transition-colors cursor-pointer"
                                   title="Consulter la fiche"
                                 >
                                   <Eye className="w-4 h-4" />
                                 </button>
                                 <button
                                   onClick={() => onEditNurse(nurse)}
-                                  className="p-1.5 text-slate-500 hover:text-amber-700 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
+                                  className="p-1.5 text-slate-500 hover:text-teal-700 hover:bg-teal-50 rounded-md transition-colors cursor-pointer"
                                   title="Rectifier les informations"
                                 >
                                   <Edit className="w-4 h-4" />

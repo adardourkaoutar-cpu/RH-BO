@@ -188,9 +188,9 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150">
       <div className="bg-white rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden my-6">
         {/* Modal Header */}
-        <div className="bg-gradient-to-r from-blue-900 to-indigo-900 p-4 text-white flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#0b3334] via-[#0f4c4c] to-[#0d4554] p-4 text-white flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            {isEditing ? <Save className="w-5 h-5 text-blue-300" /> : <UserPlus className="w-5 h-5 text-blue-300" />}
+            {isEditing ? <Save className="w-5 h-5 text-teal-300" /> : <UserPlus className="w-5 h-5 text-teal-300" />}
             <span className="font-bold text-base">
               {isEditing ? `Modifier la Fiche : ${nurseToEdit.prenom} ${nurseToEdit.nom}` : 'Ajouter un Nouveau Personnel Infirmier'}
             </span>
@@ -214,7 +214,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
 
           {/* Section 1: Informations Personnelles */}
           <div className="space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900 border-b border-slate-200 pb-1 flex items-center justify-between">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-teal-950 border-b border-slate-200 pb-1 flex items-center justify-between">
               <span>1. État Civil & Données Personnelles</span>
               <span className="text-[10px] font-normal text-slate-500 lowercase">* champs obligatoires</span>
             </h3>
@@ -230,7 +230,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: BENNANI"
                   value={nom}
                   onChange={(e) => setNom(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -244,7 +244,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: Fatima"
                   value={prenom}
                   onChange={(e) => setPrenom(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -255,7 +255,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={sexe}
                   onChange={(e) => setSexe(e.target.value as Sexe)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Femme">Femme</option>
                   <option value="Homme">Homme</option>
@@ -272,7 +272,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: 2029329"
                   value={ppr}
                   onChange={(e) => setPpr(e.target.value)}
-                  className="w-full text-xs font-mono border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-mono border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -286,7 +286,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: JD69641"
                   value={cni}
                   onChange={(e) => setCni(e.target.value)}
-                  className="w-full text-xs font-mono uppercase border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-mono uppercase border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -299,7 +299,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   required
                   value={dateNaissance}
                   onChange={(e) => setDateNaissance(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -312,7 +312,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: Sidi Ifni, Tiznit, Guelmim..."
                   value={lieuNaissance}
                   onChange={(e) => setLieuNaissance(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -323,7 +323,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={etatMarital}
                   onChange={(e) => setEtatMarital(e.target.value as any)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Célibataire">Célibataire</option>
                   <option value="Marié(e)">Marié(e)</option>
@@ -341,7 +341,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   min="0"
                   value={nombreEnfants}
                   onChange={(e) => setNombreEnfants(Number(e.target.value))}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -349,7 +349,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
 
           {/* Section 2: Profil Professionnel */}
           <div className="space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900 border-b border-slate-200 pb-1">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-teal-950 border-b border-slate-200 pb-1">
               2. Profil Professionnel & Statut de la Fonction Publique
             </h3>
 
@@ -361,7 +361,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={specialite}
                   onChange={(e) => setSpecialite(e.target.value as Specialite)}
-                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="IAR">IAR (Infirmier Anesthésiste Réanimateur)</option>
                   <option value="IP">IP (Infirmier Polyvalent)</option>
@@ -377,7 +377,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={fonction}
                   onChange={(e) => setFonction(e.target.value as RoleFonction)}
-                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Aide-opératoire">Aide opératoire / Panseur</option>
                   <option value="Anesthésiste">Anesthésiste</option>
@@ -393,7 +393,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={grade}
                   onChange={(e) => setGrade(e.target.value as Grade)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Infirmier 1er Grade">Infirmier 1er Grade</option>
                   <option value="Infirmier Principal">Infirmier Principal</option>
@@ -411,7 +411,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   required
                   value={dateRecrutement}
                   onChange={(e) => setDateRecrutement(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -422,7 +422,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={etatFonctionPublique}
                   onChange={(e) => setEtatFonctionPublique(e.target.value as EtatFonctionPublique)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Fonctionnaire Titulaire">Fonctionnaire Titulaire</option>
                   <option value="Stagiaire">Stagiaire</option>
@@ -440,7 +440,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="06 XX XX XX XX"
                   value={telephone}
                   onChange={(e) => setTelephone(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -499,7 +499,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   placeholder="Ex: Sidi Ifni, Tiznit, Mirleft, Guelmim..."
                   value={lieuResidence}
                   onChange={(e) => setLieuResidence(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
               </div>
 
@@ -513,9 +513,9 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                       type="checkbox"
                       checked={navette}
                       onChange={(e) => setNavette(e.target.checked)}
-                      className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
+                      className="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500"
                     />
-                    <span className="text-xs font-medium text-blue-700">Oui, Navettiste</span>
+                    <span className="text-xs font-medium text-teal-800">Oui, Navettiste</span>
                   </label>
                 </div>
 
@@ -529,7 +529,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                       placeholder="Ex: De Tiznit vers Sidi Ifni, De Guelmim..."
                       value={trajetNavette}
                       onChange={(e) => setTrajetNavette(e.target.value)}
-                      className="w-full text-xs border border-blue-300 bg-blue-50/50 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                      className="w-full text-xs border border-teal-300 bg-teal-50/50 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                     />
                   </div>
                 )}
@@ -539,7 +539,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
 
           {/* Section 4: Système de Travail & Horaires */}
           <div className="space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900 border-b border-slate-200 pb-1">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-teal-950 border-b border-slate-200 pb-1">
               4. Système de Travail & Organisation au Bloc
             </h3>
 
@@ -551,7 +551,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                 <select
                   value={situationActuelle}
                   onChange={(e) => setSituationActuelle(e.target.value as SituationActuelle)}
-                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 >
                   <option value="Système de garde">Système de garde (Équipe 24h / Rotation)</option>
                   <option value="Système normal">Système normal (Horaire continu)</option>
@@ -572,7 +572,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                     value={shiftNormalDetails}
                     onChange={(e) => setShiftNormalDetails(e.target.value)}
                     placeholder="Ex: 08h30 - 16h30 / Repos week-end"
-                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                    className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                   />
                   <p className="text-[10px] text-amber-700 mt-1">
                     *Note réglementaire: Le système normal exclut le programme opératoire ou l'affectation en salle.
@@ -590,7 +590,7 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
                   max="22"
                   value={joursReportes}
                   onChange={(e) => setJoursReportes(Number(e.target.value))}
-                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-hidden"
+                  className="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-teal-600 focus:outline-hidden"
                 />
                 <span className="text-[10px] text-slate-500 block mt-0.5">
                   Quota légal : 22 jours statutaires + report (hors week-ends & fériés).
@@ -604,13 +604,13 @@ export const AddEditNurseModal: React.FC<AddEditNurseModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-xl transition-colors"
+              className="px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
             >
               Annuler
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white rounded-xl shadow-md transition-colors flex items-center space-x-1.5"
+              className="px-5 py-2 text-xs font-bold bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl shadow-md transition-colors flex items-center space-x-1.5 cursor-pointer"
             >
               <Save className="w-4 h-4" />
               <span>{isEditing ? 'Enregistrer les Modifications' : 'Créer la Fiche Personnel'}</span>

@@ -77,7 +77,7 @@ export const CalendarPlanningView: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">
               Calendrier du Bloc & Planning Prévisionnel
             </h2>
-            <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+            <span className="bg-teal-100 text-teal-800 border border-teal-200 text-xs font-bold px-2.5 py-0.5 rounded-full">
               Année {currentYear}
             </span>
           </div>
@@ -91,7 +91,7 @@ export const CalendarPlanningView: React.FC = () => {
           <button
             onClick={() => setActiveSubTab('calendar')}
             className={`px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
-              activeSubTab === 'calendar' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              activeSubTab === 'calendar' ? 'bg-white text-teal-800 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Calendrier Mensuel
@@ -99,7 +99,7 @@ export const CalendarPlanningView: React.FC = () => {
           <button
             onClick={() => setActiveSubTab('annual_plan')}
             className={`px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
-              activeSubTab === 'annual_plan' ? 'bg-white text-blue-700 shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              activeSubTab === 'annual_plan' ? 'bg-white text-teal-800 font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Planning Annuel (Décembre) & Confirmation Début de Mois
@@ -111,14 +111,14 @@ export const CalendarPlanningView: React.FC = () => {
         /* Interactive Monthly Calendar View */
         <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
           {/* Calendar Header with Navigation */}
-          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-blue-950 text-white flex items-center justify-between">
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-[#0b3334] via-[#0f4c4c] to-[#0d4554] text-white flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <CalendarDays className="w-6 h-6 text-blue-400" />
+              <CalendarDays className="w-6 h-6 text-teal-300" />
               <div>
                 <h3 className="text-lg font-bold">
                   {monthNames[currentMonth]} {currentYear}
                 </h3>
-                <span className="text-xs text-slate-300">
+                <span className="text-xs text-teal-200/80">
                   Bloc Opératoire Central — CHP Sidi Ifni
                 </span>
               </div>
@@ -134,7 +134,7 @@ export const CalendarPlanningView: React.FC = () => {
               </button>
               <button
                 onClick={() => setCurrentDate(new Date(2026, 10, 1))}
-                className="px-3 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-semibold text-white transition-colors cursor-pointer"
+                className="px-3 py-1 rounded-lg bg-teal-500/30 hover:bg-teal-500/40 text-xs font-semibold text-white transition-colors cursor-pointer border border-teal-400/40"
               >
                 Aujourd'hui
               </button>
@@ -155,7 +155,7 @@ export const CalendarPlanningView: React.FC = () => {
             <div>Mercredi</div>
             <div>Jeudi</div>
             <div>Vendredi</div>
-            <div className="text-blue-700">Samedi</div>
+            <div className="text-teal-700">Samedi</div>
             <div className="text-red-600">Dimanche</div>
           </div>
 
@@ -179,7 +179,7 @@ export const CalendarPlanningView: React.FC = () => {
                   key={`day-${dayNum}`}
                   className={`min-h-[110px] p-2 flex flex-col justify-between transition-colors ${
                     isToday
-                      ? 'bg-blue-50/70 border-2 border-blue-600'
+                      ? 'bg-teal-50/80 border-2 border-teal-600'
                       : holiday
                       ? 'bg-amber-50/40'
                       : isWeekendDay
@@ -191,7 +191,7 @@ export const CalendarPlanningView: React.FC = () => {
                     <span
                       className={`font-bold text-xs inline-block w-6 h-6 rounded-full flex items-center justify-center ${
                         isToday
-                          ? 'bg-blue-700 text-white'
+                          ? 'bg-teal-700 text-white'
                           : holiday
                           ? 'bg-amber-500 text-white font-extrabold'
                           : isWeekendDay
@@ -228,7 +228,7 @@ export const CalendarPlanningView: React.FC = () => {
                               ? 'bg-red-100 text-red-900 border-red-200'
                               : isMaternity
                               ? 'bg-purple-100 text-purple-900 border-purple-200'
-                              : 'bg-blue-100 text-blue-900 border-blue-200'
+                              : 'bg-teal-100 text-teal-900 border-teal-200'
                           }`}
                           title={`${nurse?.prenom} ${nurse?.nom} (${d.typeConge})`}
                         >
@@ -254,7 +254,7 @@ export const CalendarPlanningView: React.FC = () => {
                 <span className="font-medium">Jour Férié Officiel Maroc</span>
               </div>
               <div className="flex items-center space-x-1.5">
-                <span className="w-3 h-3 rounded-full bg-blue-600"></span>
+                <span className="w-3 h-3 rounded-full bg-teal-600"></span>
                 <span className="font-medium">Congé Administratif</span>
               </div>
               <div className="flex items-center space-x-1.5">
@@ -291,7 +291,7 @@ export const CalendarPlanningView: React.FC = () => {
           <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between text-xs">
             <div className="flex items-center space-x-2 font-bold text-slate-800 text-sm">
               <span>Mois en cours de révision :</span>
-              <span className="text-blue-700 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">
+              <span className="text-teal-900 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">
                 {monthNames[currentMonth]} {currentYear}
               </span>
             </div>

@@ -35,9 +35,9 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-150">
       <div className="bg-white rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden my-6">
         {/* Modal Controls Bar */}
-        <div className="bg-slate-900 p-4 text-white flex items-center justify-between no-print">
+        <div className="bg-gradient-to-r from-[#0b3334] via-[#0f4c4c] to-[#0d4554] p-4 text-white flex items-center justify-between no-print">
           <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-5 h-5 text-amber-400" />
+            <ShieldCheck className="w-5 h-5 text-teal-300" />
             <span className="font-bold text-sm">
               Document Administratif Officiel — CHP Sidi Ifni
             </span>
@@ -46,7 +46,7 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
           <div className="flex items-center space-x-2">
             <button
               onClick={handlePrint}
-              className="flex items-center space-x-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer"
+              className="flex items-center space-x-1.5 px-3 py-1.5 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shadow-xs"
             >
               <Printer className="w-4 h-4" />
               <span>Imprimer l'Avis</span>
@@ -71,7 +71,7 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
                 <div>Direction Régionale de la Santé - Guelmim Oued-Noun</div>
                 <div>Délégation Provinciale de Sidi Ifni</div>
                 <div className="font-semibold">Centre Hospitalier Provincial de Sidi Ifni</div>
-                <div className="font-bold text-blue-900">Service : Bloc Opératoire Central</div>
+                <div className="font-bold text-teal-950">Service : Bloc Opératoire Central</div>
               </div>
 
               <div className="text-right space-y-0.5 font-sans">
@@ -129,10 +129,10 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
               {isCessation ? (
                 <>
                   <p>
-                    A <b>cessé le service</b> le : <span className="underline font-bold text-blue-900">{demande.dateCessation}</span>
+                    A <b>cessé le service</b> le : <span className="underline font-bold text-teal-950">{demande.dateCessation}</span>
                   </p>
                   <p>
-                    Pour motif de : <span className="font-bold underline">{demande.typeConge}</span> d'une durée réglementaire de <b className="text-blue-900">{demande.nombreJours} jours</b>.
+                    Pour motif de : <span className="font-bold underline">{demande.typeConge}</span> d'une durée réglementaire de <b className="text-teal-950">{demande.nombreJours} jours</b>.
                   </p>
                   {demande.typeConge === 'Congé Maladie' && (
                     <p className="text-xs text-slate-700 bg-red-50 p-2.5 rounded border border-red-200">
@@ -175,7 +175,7 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
             <div>
               <div className="font-bold text-slate-800 uppercase mb-2">L'Infirmier Chef du Bloc</div>
               <div className="text-[11px] font-sans font-semibold text-slate-700">Kaoutar ADARDOUR</div>
-              <div className="w-20 h-20 border-2 border-dashed border-blue-200 rounded-full mx-auto flex items-center justify-center text-[10px] text-blue-500 font-sans mt-2">
+              <div className="w-20 h-20 border-2 border-dashed border-teal-300 rounded-full mx-auto flex items-center justify-center text-[10px] text-teal-700 font-sans mt-2">
                 Cachet du Service
               </div>
             </div>
@@ -194,13 +194,13 @@ export const OfficialSlipModal: React.FC<OfficialSlipModalProps> = ({
         <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-3 no-print">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-xl"
+            className="px-4 py-2 text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-xl cursor-pointer"
           >
             Fermer
           </button>
           <button
             onClick={handlePrint}
-            className="px-4 py-2 text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white rounded-xl flex items-center space-x-1.5 shadow-md"
+            className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white rounded-xl flex items-center space-x-1.5 shadow-md cursor-pointer"
           >
             <Printer className="w-4 h-4" />
             <span>Imprimer le document officiel</span>
