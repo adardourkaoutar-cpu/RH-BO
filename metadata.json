@@ -1,0 +1,6 @@
+{
+  "name": "RH Bloc Opératoire - CHP Sidi Ifni",
+  "description": "Système de Gestion des Ressources Humaines du personnel infirmier du Bloc Opératoire Central du Centre Hospitalier Provincial de Sidi Ifni.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
